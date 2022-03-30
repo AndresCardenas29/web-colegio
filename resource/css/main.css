@@ -1,0 +1,578 @@
+@font-face {
+    font-family: "Quicksand-Regular";
+    src: url("../fonts/Quicksand/static/Quicksand-Regular.ttf");
+}
+
+:root {
+    --Quicksand-Regular: "Quicksand-Regular";
+    --bg-footer: #191919;
+}
+
+* {
+    font-family: "Quicksand-Regular";
+}
+
+::-webkit-scrollbar{
+    background: #D9E9EF;
+    background-image: url("/resource/img/geometry-bg.svg");
+    background-size: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #191919;
+    border-radius: 20px;
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 0.8s ease-in-out;
+}
+
+.loader2 {
+    clip-path: circle(0% at 100% 0);
+}
+
+.loader img {
+    animation: loader infinite ease-in-out 1s;
+    width: 30vw;
+}
+
+@keyframes loader {
+    0% {
+        transform: scale(.5);
+    }50%{
+        transform: scale(1);
+    }100%{
+        transform: scale(.5);
+    }
+}
+
+.btn-totop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn-totop:hover {
+    transform: scale(1.4);
+}
+
+/* MENU USUARIO */
+
+.contenedor-usuario {
+    width: 354px;
+    background: #fff;
+    position: fixed;
+    top: 76px;
+    right: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.453);
+    border-radius: 8px;
+    display: none;
+}
+
+.contenedor-usuario .info-usuario {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.302);
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedor-usuario .info-usuario .foto-usuario {
+    width: 100px;
+    height: 100px;
+    background: rgb(109, 1, 114);
+    color: #fff;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    user-select: none;
+}
+
+.contenedor-usuario .info-usuario .nombre-usuario {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.contenedor-usuario .info-usuario .mail-usuario {}
+
+.contenedor-usuario .info-usuario .btn-gestionar-cuenta {
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.234);
+}
+
+.contenedor-usuario .info-usuario .btn-gestionar-cuenta:hover {
+    background: rgb(247, 247, 247);
+}
+
+.contenedor-usuario .btn-cerrar-sesion {
+    text-align: center;
+    margin: 20px auto;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.234);
+}
+.contenedor-usuario .btn-cerrar-sesion:hover {
+    background: rgb(247, 247, 247);
+}
+
+/* FIN MENU USUARIO */
+
+/* INICIO DE MENSAJERPIA */
+
+.contenedor-mensajeria {
+    width: 400px;
+    background: #fff;
+    position: fixed;
+    top: 76px;
+    right: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.453);
+    border-radius: 8px;
+    user-select: none;
+    display: none;
+}
+
+.contenedor-mensajeria .titulo-mensajeria {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.268);
+    padding: 10px;
+}
+
+.contenedor-mensajeria .mensajes {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.268);
+    user-select: none;
+    cursor: pointer;
+}
+
+.contenedor-mensajeria .mensajes .contenedor-mensaje {
+    text-decoration: none;
+}
+
+.contenedor-mensajeria .mensajes .contenedor-mensaje .titulo-mensaje,
+.contenedor-mensajeria .mensajes .contenedor-mensaje .descripcion-mensaje {
+    color: #000;
+}
+
+.contenedor-mensajeria .mensajes .contenedor-mensaje:hover {
+    background: rgb(232, 232, 232);
+}
+
+.contenedor-mensajeria .mensajes .contenedor-mensaje .titulo-mensaje {
+    padding: 10px 10px 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contenedor-mensajeria .mensajes .contenedor-mensaje .descripcion-mensaje {
+    padding: 0 10px 10px;
+    line-height: 17px;
+}
+
+.contenedor-mensajeria .btn-ver-mensajes {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.contenedor-mensajeria .btn-ver-mensajes:hover {
+    background: rgb(232, 232, 232);
+}
+
+/* FIN DE MENSAJERPIA */
+
+/* INICIO DE NOTIFICACIONES */
+
+.contenedor-notificaciones {
+    width: 400px;
+    background: #fff;
+    position: fixed;
+    top: 76px;
+    right: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.453);
+    border-radius: 8px;
+    user-select: none;
+    overflow: hidden;
+    display: none;
+}
+
+.contenedor-notificaciones .titulo-mis-notificaciones {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.268);
+}
+
+.contenedor-notificaciones .notificaciones .notificaion {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.268);
+}
+
+.contenedor-notificaciones .notificaciones .notificaion:hover {
+    background: rgb(232, 232, 232);
+}
+
+/* FIN DE NOTIFICACIONES */
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body>.contenedor {
+    background: #D9E9EF;
+    width: 100vw;
+    height: 100%;
+    background-image: url("/resource/img/geometry-bg.svg");
+    background-attachment: fixed;
+    padding-top: 56px;
+}
+
+/* INICIO MENU LATERAL */
+
+.menu-lateral {
+    width: 230px;
+    height: 100vh;
+    background: var(--bg-footer);
+    position: fixed;
+    transition: all .5s;
+    color: #fff;
+    overflow: hidden;
+    left: -120%;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton .imagen svg{
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton:hover,
+.menu-lateral .contenedor-menu-lateral .boton:hover>.imagen svg {
+    fill: var(--bg-footer);
+    color: var(--bg-footer);
+    background: #fff;
+}
+
+/* boton 2 */
+
+.menu-lateral .contenedor-menu-lateral .boton2 {
+    text-decoration: none;
+    color: rgb(251, 255, 0);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton2 .imagen svg {
+    fill: rgb(251, 255, 0);
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton2:hover,
+.menu-lateral .contenedor-menu-lateral .boton2:hover>.imagen svg {
+    fill: var(--bg-footer);
+    color: var(--bg-footer);
+    background: rgb(251, 255, 0);
+}
+
+/* boton 3 */
+
+.menu-lateral .contenedor-menu-lateral .boton3 {
+    text-decoration: none;
+    color: rgb(0, 217, 255);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton3 .imagen svg {
+    fill: rgb(0, 217, 255);
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton3:hover,
+.menu-lateral .contenedor-menu-lateral .boton3:hover>.imagen svg {
+    fill: var(--bg-footer);
+    color: var(--bg-footer);
+    background: rgb(0, 217, 255);
+}
+
+/* Active */
+
+.menu-lateral .contenedor-menu-lateral .boton.active,
+.menu-lateral .contenedor-menu-lateral .boton2.active,
+.menu-lateral .contenedor-menu-lateral .boton3.active {
+    background-image: url("/resource/img/flecha-a-la-izquierda-blanco.svg");
+    background-size: 30px;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.menu-lateral .contenedor-menu-lateral .boton.active:hover,
+.menu-lateral .contenedor-menu-lateral .boton2.active:hover,
+.menu-lateral .contenedor-menu-lateral .boton3.active:hover {
+    background-image: url("/resource/img/flecha-a-la-izquierda.svg");
+}
+
+/* FIN MENU LATERAL */
+
+header {
+    background: #fff;
+    width: 100vw;
+    height: 56px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.268);
+    display: flex;
+    position: fixed;
+    top: 0px;
+}
+
+header .left {
+    display: flex;
+    width: 50vw;
+}
+
+header .left .btn-menu {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-footer);
+    /* background-image: url("/resource/img/menu-abierto.svg"); */
+    fill: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+header .left .btn-menu>svg {
+    width: 35px;
+}
+
+header .left .icono-colegio {
+    width: 56px;
+    height: 56px;
+    margin: 0 10px;
+}
+
+header .left .icono-colegio img {
+    width: 100%;
+    height: 100%;
+}
+
+header .left .nombre-colegio {
+    line-height: 0px;
+}
+
+header .left .nombre-colegio h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .right {
+    display: flex;
+    width: 50vw;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+header .right>div {
+    cursor: pointer;
+    user-select: none;
+}
+
+header .right .btn-usuario {
+    background: rgb(123, 4, 146);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 18pt;
+    font-weight: bold;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.453);
+}
+
+header .right .btn-mensaje {
+    fill: var(--bg-footer);
+    width: 40px;
+    height: 40px;
+    margin: 0 30px;
+}
+
+
+header .right .btn-notificacion {
+    fill: var(--bg-footer);
+    width: 40px;
+    height: 40px;
+}
+
+.title {
+    width: 95vw;
+    height: 60px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.268);
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+
+.contenido {
+    width: 95vw;
+    height: 150vh;
+    border-radius: 29px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.268);
+    padding: 40px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.885);
+}
+
+.contenido .contenedor {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.33);
+    overflow: hidden;
+}
+
+footer {
+    width: 100vw;
+    height: 100%;
+    background: var(--bg-footer);
+    background-image: url("/resource/img/footer-pattern.png");
+    color: white;
+    text-align: center;
+    padding: 2vw;
+    line-height: 8px;
+}
+
+@media (max-width: 411px) {
+    header .right .btn-mensaje {
+        margin: 0 10px;
+    }
+
+    header .right {
+        padding-right: 10px;
+    }
+
+    header .left .nombre-colegio {
+        margin-left: 10px;
+    }
+
+    header .left .icono-colegio {
+        display: none;
+    }
+
+    .contenedor-usuario {
+        width: 100vw;
+        top: 60px;
+        right: 0px;
+    }
+
+    .contenedor-mensajeria{
+        width: 100vw;
+        top: 60px;
+        right: 0px;
+    }
+
+    .contenedor-notificaciones {
+        width: 100vw;
+        top: 60px;
+        right: 0px;
+    }
+
+    footer {
+        line-height: 13px;
+    }
+
+    .btn-totop{
+        bottom: 50px;
+        right: 10px;
+        filter: opacity(.7);
+    }
+
+    .menu-lateral {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        left: -120%;
+    }
+
+    .title {
+        width: 90vw;
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 15px;
+    }
+
+    .contenido {
+        width: 90vw;
+        border-radius: 10px;
+        padding: 20px;
+    }
+}
